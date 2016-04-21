@@ -30,6 +30,7 @@ class CCliente extends Cliente {
 
     public function carregar(){
         parent::select();
+        parent::setServicos();
     }
 
     public function gravar(){

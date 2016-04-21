@@ -10,6 +10,7 @@ class Cliente extends Sistema{
     private $endereco_cep;
     private $endereco_numero;
     private $endereco_complemento;
+    private $servicos = array();
     
     public function __construct() {
         parent::__construct();
@@ -54,6 +55,10 @@ class Cliente extends Sistema{
     function getId() {
         return $this->id;
     }
+    
+    function getServicos() {
+        return $this->servicos;
+    }
 
     function getNome() {
         return $this->nome;
@@ -95,6 +100,16 @@ class Cliente extends Sistema{
         }
     }
 
+    public function setServicos(){
+        if($this->id>0){
+            $this->servicos = $this->fetchAssoc("select S.nome as servico, datediff(Ct.data_fim,current_date) as dias "
+                                   . "from contrato Ct "
+                                   . "inner join cliente Cl on Cl.id = Ct.id_cliente and Cl.id = ? "
+                                   . "inner join servico S on S.id = Ct.id_servico "
+                                   . "order by dias", $this->id);
+        }
+    }
+    
     function setNome() {
         $this->nome = $_POST["nome"];
     }

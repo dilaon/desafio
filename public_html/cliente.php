@@ -1,4 +1,24 @@
 <?php if($s->getMetodo()=='form'){ ?>
+<?php if($s->getServicos()){ ?>
+        <div class="box list"> 
+            <h1>Serviços do cliente</h1>
+            <table>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Prazo</th>
+                </tr>
+<?php
+            foreach($s->getServicos() as $lista){
+                $i++;
+?>
+                <tr class="<?=($i%2==0)?'tr1':'tr2'?>">
+                    <td><?=$lista["servico"]?></td>
+                    <td><?=($lista["dias"]>0) ? "{$lista["dias"]} dias" : "Encerrado"?></td>
+                </tr>
+<?php       } ?>
+            </table>
+        </div>
+<?php   } ?>
         <form id="formulario" name="formulario" method="post" action="">
             <div class="box"> 
 		<h1>Clientes</h1>
