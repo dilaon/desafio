@@ -1,0 +1,19 @@
+* { margin:0; padding:0;}
+body{ font:100% normal Arial, Helvetica, sans-serif; font-size:18px; }
+form,input,select,textarea{margin:0; padding:0; }
+
+div#menu ul { list-style:none; width:100%; background:#eee; text-align:center; padding:16px 0; }
+div#menu ul li { display:inline-block; width:120px;  }
+
+div.box { margin:0 auto; width:500px; position:relative; top:50px; }
+div.box h1 {color:#000; text-transform:uppercase; padding:5px; font-size:30px; }
+div.box label { width:100%; display: block; padding:10px 0 10px 0;}
+div.box label.centro { text-align:center; }
+div.box label span.prompt { display: block; font-size:16px; float:left; width:100px; text-align:right; padding:5px 20px 0 0; }
+div.box input, div.box select { font-size:20px; }
+div.box button { font-size:16px; padding:6px; }
+div.list { width:800px; } 
+div.list table { width:100%; } 
+div.list table th { text-align:left; background:#ccc; } 
+div.list table tr.tr1 { background:#eee; }
+div.list table tr.tr2 { background:#fff; } 
