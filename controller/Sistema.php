@@ -26,7 +26,10 @@ class Sistema extends Banco{
 
         if(!$this->getErro() && $arr[0]["id"]>0){
             session_start();
-            session_cache_expire(525600); /* duração: 1 ano */
+            /* duração: 1 ano */
+            if($_POST["manter_conectado"]=='S')
+                session_cache_expire(525600); 
+            
             $_SESSION["user"]["id"]   = $arr[0]["id"];
             $_SESSION["user"]["nome"] = $arr[0]["nome"];
             session_write_close();  

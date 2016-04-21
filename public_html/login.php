@@ -42,6 +42,10 @@
                     <input name="captcha_input" type="text" id="captcha_input" maxlength="14" />
                 </label>
                 <label class="centro">
+                    <input name="manter_conectado" value="S" type="checkbox" id="manter_conectado"<?=($_POST["manter_conectado"]=='S') ?' checked="checked"':''?> />
+                    Manter conectado
+                </label>
+                <label class="centro">
                     <button type="submit">Entrar</button>
                 </label>
             </div>
